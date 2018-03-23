@@ -1,0 +1,180 @@
+{
+  "fieldsets": [{
+    "title": "Core",
+    "fields": [
+     {
+        "id": "title",
+         "title": "research project title or other title"
+      },
+    {
+        "id": "research_station",
+         "title": "research station"
+      },
+      {
+        "id": "research_type",
+         "title": "work tasks"
+      },
+      "summary",
+      "topics",
+      {
+        "id": "stay_dates",
+        "title":"group stay dates (required)",
+        "items": {
+          "fields": [{
+            "id": "start_date",
+            "title":"arrival date (required)"
+            },{
+            "id": "end_date",
+            "title":"departure date (required)"
+          }
+          ]
+        }
+      }
+      ]},
+     {
+    "title": "People",
+    "fields": [{
+      "id": "people",
+      "items": {
+        "fields": [
+          "!id",
+           {
+            "id": "first_name",
+            "title": "first name (required)"
+          }, {
+            "id": "last_name",
+            "title": "last name (required)"
+          },
+           {
+            "id":"organisation",
+            "title": "organisation (required)"
+           },
+          {
+          "id": "@country",
+          "title": "country (required)"},
+          {
+        "id": "roles",
+        "title": "choose all applicable roles (required)"},
+          {
+        "id": "station_dates",
+        "title": "days at the research station (required)",
+        "items": {
+          "fields": [
+          {
+              "id":"accomodation",
+              "title":"accomodation included (required)"
+           },
+           {
+             "id": "start_date",
+             "title": "arrival date (required)"
+           },
+           {
+             "id": "end_date",
+             "title": "departure date (required)"
+           }
+          ]
+        }
+      }
+
+        ]
+      }
+    }]
+  },
+   {
+    "title": "Guests",
+    "fields": [{
+      "id": "groups",
+      "title": "guests",
+      "items": {
+        "fields": [
+          "!id",
+           {
+            "id":"number_of_persons",
+            "title": "number of persons (required)"
+           },
+           {
+            "id":"organisation",
+            "title": "organisation (required)"
+           },
+          {
+          "id": "@country",
+          "title": "country (required)"},
+          {
+        "id": "roles",
+        "title": "choose all applicable roles (required)"},
+          {
+        "id": "station_dates",
+        "title": "days at the research station (required)",
+        "items": {
+          "fields": [
+          {
+              "id":"accomodation",
+              "title": "accomodation included (required)"
+           },
+           {
+             "id": "start_date",
+             "title": "arrival date (required)"
+           },
+           {
+             "id": "end_date",
+             "title": "departure date (required)"
+           }
+          ]
+        }
+      }
+
+        ]
+      }
+    }]
+  },
+   {
+      "title": "Links",
+      "fields": [{
+        "id": "links",
+        "items": {
+          "fields": [ {
+            "id": "href",
+            "title": "link (please include protocol f.ex. 'http://' as in link http://www.npolar.no)(required)"
+          },
+          {
+            "id": "rel",
+            "title": "relation between this registration and the link (required)"
+          },
+        "!hreflang",
+        "!type",
+        "!length",
+        {
+          "id": "title",
+          "title": "link title (required)"
+        }
+          ]
+        }
+      }]
+  },
+  {
+    "title": "Edits",
+    "fields": [
+       {
+        "id": "draft",
+        "title": "draft (not part of statistics)"
+      },
+      {
+        "id": "created",
+        "disabled": true
+      }, {
+        "id": "created_by",
+        "disabled": true
+      }, {
+        "id": "updated",
+        "disabled": true
+      }, {
+        "id": "updated_by",
+        "disabled": true
+      },
+       {
+        "id": "comment",
+        "title": "comments for major registration updates"
+      }
+    ]
+  }]
+}
