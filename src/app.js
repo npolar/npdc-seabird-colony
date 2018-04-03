@@ -16,6 +16,8 @@ var resources = [
   {'path': '/', 'resource': 'NpolarApi'},
   {'path': '/user', 'resource': 'User'},
   {'path': '/dataset', 'resource': 'Dataset'},
+  {'path': '/project', 'resource': 'Project'},
+    {'path': '/publication', 'resource': 'Publication'},
   {'path': '/seabird-colony', 'resource': 'SeabirdColony'}
 ];
 

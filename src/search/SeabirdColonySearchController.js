@@ -15,13 +15,14 @@ var SeabirdColonySearchController = function ($scope, $location, $controller, $f
 
   npdcAppConfig.cardTitle = "Seabird Colony Archive";
   npdcAppConfig.search.local.results.subtitle = "zone";
+  npdcAppConfig.search.local.results.title = "species"; //"species";
 
 
   let query = function() {
     let defaults = {
       limit: "50",
       sort: "-updated",
-      fields: 'species,collection,updated,zone,colony_name,id',
+      fields: 'species,id,updated,zone,colony_name',
       facets: 'species,zone'};
 
     let invariants = $scope.security.isAuthenticated() ? {} : {} ;
