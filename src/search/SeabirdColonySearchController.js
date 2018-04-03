@@ -14,8 +14,8 @@ var SeabirdColonySearchController = function ($scope, $location, $controller, $f
  };
 
   npdcAppConfig.cardTitle = "Seabird Colony Archive";
-  npdcAppConfig.search.local.results.subtitle = "zone";
-  npdcAppConfig.search.local.results.title = "species"; //"species";
+  npdcAppConfig.search.local.results.subtitle = "species";
+  npdcAppConfig.search.local.results.title = "colony_name"; //"species";
 
 
   let query = function() {

@@ -1,120 +1,79 @@
 <!DOCTYPE html>
 <npdc:edit-button class="np-primary-control"></npdc:edit-button>
 <npdc:loader ng-if="!document"></npdc:loader>
-<leaflet ng-if="document && mapOptions.coverage" options="mapOptions" class="coverage-map"></leaflet>
+  <leaflet ng-if="document && mapOptions" options="mapOptions" class="coverage-map"></leaflet>
 <div class="np-padding">
+
   <div ng-if="document" class="np-doc">
 
-    <h3>{{ 'Station booking statistics' | t }}</h3>
 
  <h1>
-  <span class="md-display-2">{{ document.title }} </span><span style={font-size:15%}>
-  [{{document.research_type}}]</span></h1>
+  <span class="md-display-2">{{ document.colony_name }} </span><span style={font-size:15%}>
+  [{{document.species}}]</span></h1>
 
 
-      <section>
+  <section>
       <p ><md-icon>place</md-icon>
-        {{document.research_station.charAt(0).toUpperCase() +  document.research_station.slice(1)}}</p>
-        <div ng-if="document.stay_dates" ng-repeat="item in document.stay_dates">
-            </p> {{ (item.start_date).split('T')[0] }} - {{ (item.end_date).split('T')[0] }}</p>
-        </div>
-      </section>
+          <span ng-if="document.colony_alternative_name">{{document.colony_alternative_name}},</span>
+          {{document.zone}}<span ng-if="document.zone && document.region">,</span>
+         {{document.region}}
+      </p>
+    </section>
 
-      <section ng-if="document.summary">
-          <md-divider></md-divider>
-        <h3>{{ 'Summary' | t }}</h3>
+    <section>
+      <md-divider></md-divider>
+      <h3>Count information</h3>
+    <span ng-if="document.start_date"><b>Start date counting:</b> {{(document.start_date).substr(0,10)}}<br /></span>
+    <span ng-if="document.end_date"><b>End date counting:</b> {{(document.end_date).substr(0,10)}}<br /></span>
+    <span ng-if="document.mean"><b>Mean count value for the species in the colony:</b> {{document.mean}}<br /></span>
+    <span ng-if="document.max"><b>Max count value for the species in the colony:</b> {{document.max}}<br /></span>
+    <span ng-if="document.min"><b>Min count value for the species in the colony:</b> {{document.min}}<br /></span>
+    <span ng-if="document.accuracy"><b>Count accuracy:</b> {{document.accuracy}}<br /></span>
+    <span ng-if="document.unit"><b>Counted unit:</b> {{document.unit}}<br /></span>
+    <span ng-if="document.method"><b>Counted method:</b> {{document.method}}<br /></span>
+    <span ng-if="document.platform"><b>Counted from platform:</b> {{document.platform}}<br /></span>
+    <span ng-if="document.breeding"><b>Breeding stage:</b> {{document.breeding}}<br /></span>
+    <span ng-if="document.count_comment"><b>Comment about the count:</b> {{document.count_comment}}<br /></span>
+    </section>
 
-        <p marked="document.summary"></p>
-      </section>
-
-
-<section ng-if="document.people && document.people.length > 0">
-  <h3>{{ 'People' | t }}</h3>
-  <md-divider></md-divider>
-  <md-list>
-    <md-list-item class="md-2-line" ng-repeat="person in document.people">
-      <md-icon class="md-avatar-icon">person</md-icon>
-        <div class="md-list-item-text">
-          <h3> {{ person.first_name }} {{ person.last_name }} </h3>
-          <p> {{ person.organisation }}&nbsp;{{ person.country }} </p>
-          <p ng-if="person.roles"><span ng-repeat="r in person.roles">{{ r | t }}<span ng-if="!$last">, </span></span></p>
-          <div ng-repeat="dates in person.station_dates">
-           <p ng-if="dates.accomodation">{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}} (with accomodation)</p>
-           <p ng-if="!dates.accomodation">{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}} (without accomodation)</p>
-         </div>
-        </div>
-      </md-list-item>
-    </md-list>
-</section>
-
- <npdc:organisations></npdc:organisations>
-
-
-
-<section ng-if="document.groups && document.groups.length > 0">
-  <h3>{{ 'Groups' | t }}</h3>
-  <md-divider></md-divider>
-  <md-list>
-    <md-list-item class="md-2-line" ng-repeat="group in document.groups">
-      <md-icon class="md-avatar-icon">groups</md-icon>
-        <div class="md-list-item-text">
-          <h3> {{ group.number_of_persons }} </h3>
-          <p> {{ group.organisation }}&nbsp;{{ group.country }} </p>
-          <p ng-if="group.roles"><span ng-repeat="r in group.roles">{{ r | t }}<span ng-if="!$last">, </span></span></p>
-          <div ng-repeat="dates in group.station_dates">
-           <p ng-if="dates.accomodation">{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}} (with accomodation)</p>
-           <p ng-if="!dates.accomodation">{{ (dates.start_date).substr(0,10) }} - {{ (dates.end_date).substr(0,10)}} (without accomodation)</p>
-         </div>
-        </div>
-      </md-list-item>
-    </md-list>
+   <section>
+     <md-divider></md-divider>
+     <h3>Location information</h3>
+      <span ng-if="document.location_accuracy"><b>Location accuracy:</b> {{document.location_accuracy}}<br /></span>
+      <span ng-if="document.conservation_type"><b>Conservation type:</b> {{document.conservation_type}}<br /></span>
+      <span ng-if="document.colony_type"><b>Colony type:</b> {{document.colony_type}}<br /></span>
+      <span ng-if="document.ownership"><b>Ownership:</b> {{document.ownership}}<br /></span>
+      <span ng-if="document.island"><b>Name of island:</b> {{document.island}}<br /></span>
+      <span ng-if="document.island_size"><b>Size of island:</b> {{document.island_size}}<br /></span>
+      <span ng-if="document.island_archipelago"><b>Name of archipelago:</b> {{document.island_archipelago}}<br /></span>
+      <span ng-if="document.length"><b>Colony length:</b> {{document.length}}<br /></span>
+      <span ng-if="document.distance"><b>Colony length:</b> {{document.distance}}<br /></span>
+      <span ng-if="document.distance_mainland"><b>Distance from colony to mainland:</b> {{document.distance_mainland}}<br /></span>
+      <span ng-if="document.exposure"><b>Colony exposure (orientation):</b> {{document.exposure}}<br /></span>
+      <span ng-if="document.area"><b>Area of cliff wall:</b> {{document.area}}<br /></span>
+      <span ng-if="document.map"><b>The map that shows the colony place:</b> {{document.map}}<br /></span>
+      <span ng-if="document.colony_area"><b>Area measured from above:</b> {{document.colony_area}}<br /></span>
+      <span ng-if="document.predators"><b>Predators in the colony:</b> {{document.predators}}<br /></span>
 </section>
 
 
 
+<section>
+      <md-divider></md-divider>
+      <h3>Reference</h3>
+      <span ng-if="document.colony_reference.authors"><b>Authors:</b> {{document.colony_reference.authors}}<br /></span>
+      <span ng-if="document.colony_reference.title"><b>Title:</b> {{document.colony_reference.title}}<br /></span>
+      <span ng-if="document.colony_reference.journal"><b>Journal:</b> {{document.colony_reference.journal}}<br /></span>
+      <span ng-if="document.colony_reference.year"><b>Year:</b> {{document.colony_reference.year}}<br /></span>
+      <span ng-if="document.colony_reference.volume"><b>Volume:</b> {{document.colony_reference.volume}}<br /></span>
+      <span ng-if="document.colony_reference.pages"><b>Pages:</b> {{document.colony_reference.pages}}<br /></span>
 
- <section>
-  <div ng-if="links.length > 0">
-    <h3>{{ 'Links' | t }}</h3>
-    <md-divider></md-divider>
-    <md-list>
-      <md-list-item class="md-2-line" ng-repeat="link in links">
-        <div class="md-list-item-text">
-          <a ng-href="{{link.href}}">{{ link.title || link.href }}</a>
-          <p>{{ link.rel }}</p>
-        </div>
-      </md-list-item>
-    </md-list>
-  </div>
-  </section>
+      <span ng-if="document.comfirmed"><b>Year the colony first were confirmed:</b>{{document.confirmed}}<br /></span>
+      <span ng-if="document.historical_colony"><b>Where the colony first were described:</b>{{document.historical_colony}}<br /></span>
+</section>
 
 
-
-      <section>
-        <md-divider></md-divider>
-        <h3>{{ 'Classification' | t }}</h3>
-
-        <div ng-if="document.topics">
-          <h4>{{ 'Topics' | t }}</h4>
-          <p>
-            <md-icon>label_outline</md-icon><span ng-repeat="topic in document.topics">
-              <a ng-href="?q=&filter-topics={{topic}}">{{ topic }}</a>{{!$last ? ' / ':''}}
-            </span>
-          </p>
-        </div>
-
-
-      <section ng-if="alternate">
-        <md-divider></md-divider>
-        <h3>{{ 'Machine-readable metadata' | t }}</h3>
-        <!-- @todo CC0 for metadata? <p></p> -->
-        <p>
-          <div ng-repeat="link in alternate">
-            <a ng-href="{{link.href}}" title="{{link.type}}">{{ link.title || link.href }}</a>
-            </div>
-        </p>
-      </section>
-
+  <md-divider></md-divider>
 <!-- created updated -->
       <section>
         <npdc:document-meta></npdc:document-meta>
@@ -122,4 +81,3 @@
 
     </div>
 </div>
-

@@ -11,40 +11,12 @@ var SeabirdColonyShowController = function($controller, $routeParams,
   $scope.resource = SeabirdColony;
 
 
-  let authors = (seabirdColony) => {
-
-    var folks = [];
-    var orgs = [];
-
-    if (seabirdColony.people instanceof Array) {
-      folks = seabirdColony.people.filter(p => p.roles.includes("author"));
-    }
-
-    if (folks.length === 0 && seabirdColony.organisations instanceof Array) {
-      orgs = seabirdColony.organisations.filter(o => o.roles.includes("author"));
-    }
-    return folks.concat(orgs);
-
-  };
-
-
-  let uri = (seabirdColony) => {
-    let link = seabirdColony.links.find(l => {
-      return l.rel === "alternate" && (/html$/).test(l.type);
-    });
-    if (link) {
-      return link.href.replace(/^http:/, "https:");
-    } else {
-      return `https://data.npolar.no/seabird-colony/${ seabirdColony.id }`;
-    }
-  };
-
   $scope.mapOptions = {};
 
   let show = function() {
 
     $scope.show().$promise.then((stationBooking) => {
-      $scope.document.research_type =  convert($scope.document.research_type);
+
 
 
       //Location on map should be the research station
@@ -63,53 +35,6 @@ var SeabirdColonyShowController = function($controller, $routeParams,
       $scope.mapOptions.coverage = bounds;
       $scope.mapOptions.geojson = "geojson";
 
-      $scope.links = stationBooking.links.filter(l => (l.rel !== "alternate" && l.rel !== "edit") && l.rel !== "data");
-      $scope.data = stationBooking.links.filter(l => l.rel === "data");
-      // or in files
-
-      $scope.alternate = stationBooking.links.filter(l => ((l.rel === "alternate") || l.rel === "edit")).concat({
-        href: `https://api.npolar.no/station-booking/?q=&filter-id=${stationBooking.id}&format=json`,
-        title: "DCAT (JSON-LD)",
-        type: "application/ld+json"
-      });
-
-      $scope.authors = authors(stationBooking).map(a => {
-        if (!a.name && a.first_name) {
-          a.name = `${a.first_name} ${a.last_name}`;
-        }
-        return a;
-      });
-
-
-      $scope.uri = uri(stationBooking);
-
-      let relatedDatasets = Dataset.array({
-        q: stationBooking.title,
-        fields: 'id,title,collection',
-        score: true,
-        limit: 5,
-        'not-id': stationBooking.id,
-        op: 'OR'
-      }).$promise;
-      let relatedPublications = Publication.array({
-        q: stationBooking.title,
-        fields: 'id,title,published_sort,collection',
-        score: true,
-        limit: 5,
-        op: 'OR'
-      }).$promise;
-      let relatedProjects = Project.array({
-        q: stationBooking.title,
-        fields: 'id,title,collection',
-        score: true,
-        limit: 5,
-        op: 'OR'
-      }).$promise;
-
-      $q.all([relatedDatasets, relatedPublications, relatedProjects]).then(related => {
-        $scope.related = related;
-      });
-
     });
 
   };
@@ -118,20 +43,5 @@ var SeabirdColonyShowController = function($controller, $routeParams,
   show();
 
 };
-
-/* convert from camelCase to lower case text*/
-function convert(str) {
-       var  positions = '';
-
-       for(var i=0; i<(str).length; i++){
-           if(str[i].match(/[A-Z]/) !== null){
-             positions += " ";
-             positions += str[i].toLowerCase();
-        } else {
-            positions += str[i];
-        }
-      }
-        return positions;
-}
 
 module.exports = SeabirdColonyShowController;
