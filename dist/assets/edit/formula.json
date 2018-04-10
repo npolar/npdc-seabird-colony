@@ -1,132 +1,64 @@
 {
   "fieldsets": [{
-    "title": "Core",
+    "title": "Sample",
     "fields": [
-     {
+      {
         "id": "title",
-         "title": "research project title or other title"
+         "title": "sample id"
       },
+      {
+        "id": "original_sample_name",
+         "title": "original sample marking"
+      },
+      {
+        "id": "lithology",
+        "title": "rock type"
+      },
+      "sample_description",
+      {
+        "id": "cabinet_no",
+        "title": "box/cabinet no"
+      },
+       {
+        "id": "thin_section",
+        "title": "thin section no"
+      },
+      "fossil",
+      "analysis"
+     ]},
     {
-        "id": "research_station",
-         "title": "research station"
-      },
-      {
-        "id": "research_type",
-         "title": "work tasks"
-      },
-      "summary",
-      "topics",
-      {
-        "id": "stay_dates",
-        "title":"group stay dates (required)",
-        "items": {
-          "fields": [{
-            "id": "start_date",
-            "title":"arrival date (required)"
-            },{
-            "id": "end_date",
-            "title":"departure date (required)"
-          }
-          ]
-        }
-      }
-      ]},
-     {
-    "title": "People",
-    "fields": [{
-      "id": "people",
-      "items": {
-        "fields": [
-          "!id",
-           {
-            "id": "first_name",
-            "title": "first name (required)"
-          }, {
-            "id": "last_name",
-            "title": "last name (required)"
-          },
-           {
-            "id":"organisation",
-            "title": "organisation (required)"
-           },
-          {
-          "id": "@country",
-          "title": "country (required)"},
-          {
-        "id": "roles",
-        "title": "choose all applicable roles (required)"},
-          {
-        "id": "station_dates",
-        "title": "days at the research station (required)",
-        "items": {
-          "fields": [
-          {
-              "id":"accomodation",
-              "title":"accomodation included (required)"
-           },
-           {
-             "id": "start_date",
-             "title": "arrival date (required)"
-           },
-           {
-             "id": "end_date",
-             "title": "departure date (required)"
-           }
-          ]
-        }
-      }
-
-        ]
-      }
-    }]
-  },
-   {
-    "title": "Guests",
-    "fields": [{
-      "id": "groups",
-      "title": "guests",
-      "items": {
-        "fields": [
-          "!id",
-           {
-            "id":"number_of_persons",
-            "title": "number of persons (required)"
-           },
-           {
-            "id":"organisation",
-            "title": "organisation (required)"
-           },
-          {
-          "id": "@country",
-          "title": "country (required)"},
-          {
-        "id": "roles",
-        "title": "choose all applicable roles (required)"},
-          {
-        "id": "station_dates",
-        "title": "days at the research station (required)",
-        "items": {
-          "fields": [
-          {
-              "id":"accomodation",
-              "title": "accomodation included (required)"
-           },
-           {
-             "id": "start_date",
-             "title": "arrival date (required)"
-           },
-           {
-             "id": "end_date",
-             "title": "departure date (required)"
-           }
-          ]
-        }
-      }
-
-        ]
-      }
-    }]
-  },
+    "title": "Setting",
+    "fields": [
+       {
+        "id": "@placename",
+        "title": "locality"
+       },
+       {
+        "id": "latitude",
+        "title": "latitude(N)"
+       },
+       {
+        "id": "longitude",
+        "title": "longitude(E)"
+       },
+       {
+        "id":"position_accuracy",
+        "title":"position type"
+       },
+       {
+        "id": "collected_year",
+        "title": "year"
+       },
+       {
+        "id": "geologist",
+        "title": "geologist"
+       },
+       "expedition",
+        {
+        "id": "sample_comment",
+        "title": "sample comment"
+       }
+    ]},
    {
       "title": "Links",
       "fields": [{
@@ -152,12 +84,19 @@
       }]
   },
   {
+    "title": "Upload",
+    "fields": [{
+      "id":"files",
+      "title":"Upload photos"
+    }]
+},
+  {
     "title": "Edits",
     "fields": [
        {
         "id": "draft",
-        "title": "draft (not part of statistics)"
-      },
+        "title": "Is this a draft (not visible to Internet users)?"
+       },
       {
         "id": "created",
         "disabled": true
@@ -176,5 +115,6 @@
         "title": "comments for major registration updates"
       }
     ]
-  }]
+  }
+  ]
 }

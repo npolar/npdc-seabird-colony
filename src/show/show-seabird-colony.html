@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <npdc:edit-button class="np-primary-control"></npdc:edit-button>
 <npdc:loader ng-if="!document"></npdc:loader>
-  <leaflet ng-if="document && mapOptions" options="mapOptions" class="coverage-map"></leaflet>
+<!-- <leaflet ng-if="document && mapOptions" options="mapOptions" class="coverage-map"></leaflet> -->
+ <div id="mapid"></div>
+
+<map opt="opt" />
 <div class="np-padding">
 
   <div ng-if="document" class="np-doc">
-
-
  <h1>
   <span class="md-display-2">{{ document.colony_name }} </span><span style={font-size:15%}>
   [{{document.species}}]</span></h1>
@@ -42,22 +43,18 @@
       <span ng-if="document.location_accuracy"><b>Location accuracy:</b> {{document.location_accuracy}}<br /></span>
       <span ng-if="document.conservation_type"><b>Conservation type:</b> {{document.conservation_type}}<br /></span>
       <span ng-if="document.colony_type"><b>Colony type:</b> {{document.colony_type}}<br /></span>
-      <span ng-if="document.ownership"><b>Ownership:</b> {{document.ownership}}<br /></span>
+      <span ng-if="document.ownership"><b>Land ownership:</b> {{document.ownership}}<br /></span>
       <span ng-if="document.island"><b>Name of island:</b> {{document.island}}<br /></span>
       <span ng-if="document.island_size"><b>Size of island:</b> {{document.island_size}}<br /></span>
       <span ng-if="document.island_archipelago"><b>Name of archipelago:</b> {{document.island_archipelago}}<br /></span>
       <span ng-if="document.length"><b>Colony length:</b> {{document.length}}<br /></span>
-      <span ng-if="document.distance"><b>Colony length:</b> {{document.distance}}<br /></span>
+      <span ng-if="document.distance"><b>Distance colony to coastline:</b> {{document.distance}}<br /></span>
       <span ng-if="document.distance_mainland"><b>Distance from colony to mainland:</b> {{document.distance_mainland}}<br /></span>
       <span ng-if="document.exposure"><b>Colony exposure (orientation):</b> {{document.exposure}}<br /></span>
       <span ng-if="document.area"><b>Area of cliff wall:</b> {{document.area}}<br /></span>
-      <span ng-if="document.map"><b>The map that shows the colony place:</b> {{document.map}}<br /></span>
-      <span ng-if="document.colony_area"><b>Area measured from above:</b> {{document.colony_area}}<br /></span>
       <span ng-if="document.predators"><b>Predators in the colony:</b> {{document.predators}}<br /></span>
+      <span ng-if="document.map"><b>The map that shows the colony place:</b> {{document.map}}<br /></span>
 </section>
-
-
-
 <section>
       <md-divider></md-divider>
       <h3>Reference</h3>
