@@ -15,17 +15,17 @@ https://browser-update.org/update.min.js
 /assets/fullscreen.png
 /assets/fullscreen@2x.png
 /assets/material-icons.css
-/assets/npdc-common-4.10.17.css
-/assets/npdc-common-4.10.css
+/assets/npdc-common-4.11.0.css
+/assets/npdc-common-4.11.css
 /assets/npdc-common-4.css
 /assets/npdc-common-master-latest.css
 /assets/npdc-common.css
 /seabird-colony/app.js
 /seabird-colony/app.js.map
 /seabird-colony/index.html
-/seabird-colony/npdc-seabird-colony-0.0.1.css
-/seabird-colony/npdc-seabird-colony-0.0.css
-/seabird-colony/npdc-seabird-colony-0.css
+/seabird-colony/npdc-seabird-colony-1.0.0.css
+/seabird-colony/npdc-seabird-colony-1.0.css
+/seabird-colony/npdc-seabird-colony-1.css
 /seabird-colony/npdc-seabird-colony-master-latest.css
 /seabird-colony/npdc-seabird-colony.css
 /assets/edit/formula.json
@@ -123,4 +123,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: 4be1a4d52328468cae6c2be8682a3b4a446ba03b020469c376d0a6abbdf30846
+# hash: 0ef4d28a3918fed3a2e99404b60534430fc0b1542191d27752fd5b1e0577194d
