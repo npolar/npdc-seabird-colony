@@ -49,6 +49,7 @@ https://browser-update.org/update.min.js
 /assets/img/pingvinjakt.jpg
 /assets/img/re3datalogo.png
 /assets/img/twitter.png
+/seabird-colony/search/marker-icon.png
 /assets/components/contributions/npdc-contributions.png
 /assets/components/metadata/json-ld-data-48.png
 /assets/img/app-icons/svalbardkartet-logo.png
@@ -122,4 +123,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: 471ca2c1870a33afee98935af05662e7a5b6e2510d9047200690020c732a700b
+# hash: 4be1a4d52328468cae6c2be8682a3b4a446ba03b020469c376d0a6abbdf30846
