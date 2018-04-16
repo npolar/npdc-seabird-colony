@@ -28,8 +28,6 @@ https://browser-update.org/update.min.js
 /seabird-colony/npdc-seabird-colony-1.css
 /seabird-colony/npdc-seabird-colony-master-latest.css
 /seabird-colony/npdc-seabird-colony.css
-/assets/edit/formula.json
-/assets/edit/no.json
 /assets/images/layers-2x.png
 /assets/images/layers.png
 /assets/images/marker-icon-2x.png
@@ -123,4 +121,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: 0ef4d28a3918fed3a2e99404b60534430fc0b1542191d27752fd5b1e0577194d
+# hash: 76f10f0de5d5f0d321dd2bd4b6ca986d0c6d8e9e03dd2b14f47b281387f3d5fb
