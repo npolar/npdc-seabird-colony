@@ -10,6 +10,7 @@ var npdcSeabirdColonyApp = angular.module('npdcSeabirdColonyApp', ['npdcCommon']
 
 npdcSeabirdColonyApp.controller('SeabirdColonyShowController', require('./show/SeabirdColonyShowController'));
 npdcSeabirdColonyApp.controller('SeabirdColonySearchController', require('./search/SeabirdColonySearchController'));
+npdcSeabirdColonyApp.directive('leafletMap', require('./show/leafletMap'));
 
 // Bootstrap ngResource models using NpolarApiResource
 var resources = [
