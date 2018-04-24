@@ -30,23 +30,15 @@ return   {
        }); //setTimeout
 
       $scope.$watch('polygon', function() {
-             console.log("scopecontr", $scope.polygon);
              var places = $scope.polygon;
-
 
             //  console.log("scopecontr2", $scope.polygon['geometries']);
             if (places) {
-                 console.log("places", places);
-                L.geoJSON(places).addTo(map);
-
+                var places2 = JSON.parse(places);
+                var  coord = places2.geometries[1].coordinates[0][0];
+                L.geoJSON(places2).addTo(map);
+                map.setView([coord[1],coord[0]], 9);
             }
-
-             //Need to reverse coord because geojson use opposite listing
-            //  var  coord = $scope.polygon[0].geometries[1].coordinates[0][0];
-            //  console.log("coord", coord);
-            //   L.geoJSON($scope.polygon).addTo(map);
-            //  L.marker([coord[1],coord[0]]).addTo(map);
-
       });
   }]
 };
