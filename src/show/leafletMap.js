@@ -48,21 +48,6 @@ return   {
                   map.setView([coord[1],coord[0]], 9);
               }
             }
-
-
-    /*          console.log("places3",places);
-
-              console.log("places2",places2);
-              var  coord = places2.coordinates;
-              L.geoJSON(places2).addTo(map);
-              map.setView([coord[1],coord[0]], 9);
-            };
-            if ((places)&&(places.type==='Polygon')) {
-                var places2 = JSON.parse(places);
-                var  coord = places2.geometries[1].coordinates[0][0];
-                L.geoJSON(places2).addTo(map);
-                map.setView([coord[1],coord[0]], 9);
-            } */
       });
   }]
 };
