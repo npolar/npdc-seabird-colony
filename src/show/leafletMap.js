@@ -2,6 +2,7 @@
 
 var L = require('../../node_modules/leaflet');
 L.Icon.Default.imagePath = "../assets/images/";
+require('leaflet-fullscreen');
 
 
 let leafletMap = function () {
@@ -18,7 +19,7 @@ return   {
 
       var coord = [15.646944,78.223333]; //std coord
 
-      var map = L.map('map2').setView([coord[1],coord[0]], 9);
+      var map = L.map('map2', {fullscreenControl: true}).setView([coord[1],coord[0]], 9);
 
       L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}/', {
         attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',

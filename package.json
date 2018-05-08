@@ -11,6 +11,7 @@
   "private": true,
   "repository": "https://github.com/npolar/npdc-seabird-colony",
   "dependencies": {
+    "leaflet-fullscreen": "^1.0.2",
     "npdc-common": "npolar/npdc-common#v4.11.2"
   },
   "devDependencies": {
