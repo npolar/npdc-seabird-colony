@@ -29,16 +29,40 @@ return   {
          map.invalidateSize();
        }); //setTimeout
 
+
+
       $scope.$watch('polygon', function() {
              var places = $scope.polygon;
 
             //  console.log("scopecontr2", $scope.polygon['geometries']);
-            if (places) {
+            if (places){
+              var places2 = JSON.parse(places);
+              if (places2.type==='Point') {
+                  var  coord = places2.coordinates;
+                  L.geoJSON(places2).addTo(map);
+                  map.setView([coord[1],coord[0]], 9);
+
+              } else if (places2.type==='GeometryCollection') {
+                  var  coord = places2.geometries[1].coordinates[0][0];
+                  L.geoJSON(places2).addTo(map);
+                  map.setView([coord[1],coord[0]], 9);
+              }
+            }
+
+
+    /*          console.log("places3",places);
+
+              console.log("places2",places2);
+              var  coord = places2.coordinates;
+              L.geoJSON(places2).addTo(map);
+              map.setView([coord[1],coord[0]], 9);
+            };
+            if ((places)&&(places.type==='Polygon')) {
                 var places2 = JSON.parse(places);
                 var  coord = places2.geometries[1].coordinates[0][0];
                 L.geoJSON(places2).addTo(map);
                 map.setView([coord[1],coord[0]], 9);
-            }
+            } */
       });
   }]
 };

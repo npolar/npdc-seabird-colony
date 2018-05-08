@@ -16,10 +16,9 @@ var SeabirdColonyShowController = function($controller, $routeParams,
   let show = function() {
 
     $scope.show().$promise.then((seabirdColony) => {
-      if ((seabirdColony.geometry)&&(seabirdColony.geometry.geometries)) {
-         $scope.polygon = seabirdColony.geometry;
-      }  //else undefined
-
+      if (seabirdColony.geometry) {
+             $scope.polygon = seabirdColony.geometry;
+      };
 
     });
 

@@ -15,7 +15,7 @@ https://browser-update.org/update.min.js
 /assets/fullscreen.png
 /assets/fullscreen@2x.png
 /assets/material-icons.css
-/assets/npdc-common-4.11.0.css
+/assets/npdc-common-4.11.2.css
 /assets/npdc-common-4.11.css
 /assets/npdc-common-4.css
 /assets/npdc-common-master-latest.css
@@ -23,9 +23,9 @@ https://browser-update.org/update.min.js
 /seabird-colony/app.js
 /seabird-colony/app.js.map
 /seabird-colony/index.html
-/seabird-colony/npdc-seabird-colony-1.0.0.css
-/seabird-colony/npdc-seabird-colony-1.0.css
-/seabird-colony/npdc-seabird-colony-1.css
+/seabird-colony/npdc-seabird-colony-2.0.0.css
+/seabird-colony/npdc-seabird-colony-2.0.css
+/seabird-colony/npdc-seabird-colony-2.css
 /seabird-colony/npdc-seabird-colony-master-latest.css
 /seabird-colony/npdc-seabird-colony.css
 /assets/images/layers-2x.png
@@ -69,6 +69,7 @@ https://browser-update.org/update.min.js
 /assets/img/app-icons/48/geology.png
 /assets/img/app-icons/48/inventory.png
 /assets/img/app-icons/48/map_archive.png
+/assets/img/app-icons/48/mapview.png
 /assets/img/app-icons/48/marine_biology.png
 /assets/img/app-icons/48/parameter.png
 /assets/img/app-icons/48/pbhims.png
@@ -76,11 +77,13 @@ https://browser-update.org/update.min.js
 /assets/img/app-icons/48/placename.png
 /assets/img/app-icons/48/projects.png
 /assets/img/app-icons/48/publication.png
+/assets/img/app-icons/48/seabird-colony.png
 /assets/img/app-icons/48/service.png
 /assets/img/app-icons/48/sighting.png
 /assets/img/app-icons/48/station-booking.png
 /assets/img/app-icons/48/text.png
 /assets/img/app-icons/48/timeseries.png
+/assets/img/app-icons/48/track.png
 /assets/img/app-icons/48/tracking.png
 /assets/img/app-icons/48/users.png
 /assets/img/app-icons/48/vessels.png
@@ -92,6 +95,7 @@ https://browser-update.org/update.min.js
 /assets/img/app-icons/96/geology.png
 /assets/img/app-icons/96/inventory.png
 /assets/img/app-icons/96/map_archive.png
+/assets/img/app-icons/96/mapview.png
 /assets/img/app-icons/96/marine_biology.png
 /assets/img/app-icons/96/parameter.png
 /assets/img/app-icons/96/pbhims.png
@@ -99,11 +103,13 @@ https://browser-update.org/update.min.js
 /assets/img/app-icons/96/placename.png
 /assets/img/app-icons/96/projects.png
 /assets/img/app-icons/96/publication.png
+/assets/img/app-icons/96/seabird-colony.png
 /assets/img/app-icons/96/service.png
 /assets/img/app-icons/96/sighting.png
 /assets/img/app-icons/96/station-booking.png
 /assets/img/app-icons/96/text.png
 /assets/img/app-icons/96/timeseries.png
+/assets/img/app-icons/96/track.png
 /assets/img/app-icons/96/tracking.png
 /assets/img/app-icons/96/users.png
 /assets/img/app-icons/96/vessels.png
@@ -121,4 +127,4 @@ NETWORK:
 SETTINGS:
 prefer-online
 
-# hash: f1c1997a9b2ba1d69385388150aafbbd5d60f18d756c120688a7f3252ba480ef
+# hash: a80b989a1f48a167945cc0597b8c0119ebebf407751ceebad858f2db7e94a06b
